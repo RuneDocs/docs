@@ -15,7 +15,8 @@ Conceptually, the grid of the game world can be modeled as a three dimensional a
 
 ```java
 private static final int
-    ZONE_COUNT = 16384 / 8, // 16384 tiles on each axis divided by 8 tiles per zone
+    SIZE = 16384,
+    ZONE_COUNT = SIZE / 8, // 16384 tiles on each axis divided by 8 tiles per zone
     ALTITUDE_COUNT = 4;
 
 private final Zone[][][] zones = new Zone[ALTITUDE_COUNT][ZONE_COUNT][ZONE_COUNT];
@@ -161,7 +162,7 @@ public Position findEmptyArea(int altitude, int width, int length) {
 }
 ```
 
-TODO
+Once a suitable area has been found somewhere on the map, the target zone can be copied. It is important that the collision matrix is included in the copy.
 
 ```java
 public Zone copy(Position position, Rotation rotation) {
@@ -177,7 +178,7 @@ public Zone copy(Position position, Rotation rotation) {
 }
 ```
 
-TODO
+And the copied zone can then be pasted at the designated location of our empty area.
 
 ```java
 public void paste(Position target, Zone zone) {
@@ -190,7 +191,7 @@ public void paste(Position target, Zone zone) {
 }
 ```
 
-TODO
+The client then needs to showcase these changes. There are two types of packets that the client supports. These are called static rebuild and dynamic rebuild, respectively. The static rebuild packet is used when there are no dynamic changes (such as zones being copied over) to the map. This will tell the client to draw the regular map based on a given tile position. For most of the time, the static rebuild packet is used. 
 
 ```java
 public static EventEncoder<BuildAreaStaticRebuild> encoder() {
@@ -208,7 +209,7 @@ public static EventEncoder<BuildAreaStaticRebuild> encoder() {
 }
 ```
 
-TODO
+The dynamic rebuild packet on the other hand will draw the zones that have been copied over to our empty area.
 
 ```java
     public static EventEncoder<BuildAreaDynamicRebuild> encoder() {
