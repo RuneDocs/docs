@@ -2,14 +2,14 @@
 
 ## Layout
 
-The game map in RuneScape is made out of a three dimensional box of exactly four altitudes or height levels where each height level holds a symmetrical two dimensional grid of 16384 x 16384 tiles. Each grid on a height level is divided into two separate units:
+The game map in RuneScape is made out of a three dimensional box of exactly four altitudes or height levels where each height level holds a symmetrical two dimensional grid of 16384 x 16384 tiles. Each grid on a height level is divided into two separate static units:
 
 - Map squares
 - Zones
 
-A map square is a 64 x 64 area of tiles. In contrast with a map square, a zone is a more fine-grained area consisting of 8 x 8 tiles. This means that each map square can hold up to 8 x 8 zones.
+A map square is a 64 x 64 area of tiles. In contrast with a map square, a zone is a more fine-grained area consisting of 8 x 8 tiles. This means that each map square can hold up to 8 x 8 zones. The RuneScape game cache stores all objects, obstacles, buildings, tiles and such per map squares. For efficiency however, the server should store all deserialized objects per zone. This allows the server to efficiently read-and manipulate zones to provide certain features of the game. This includes (but is not limited to) instancing, searching for nearby players / npcs etc.
 
-TODO: diagrams
+[Game Map](./game-map.png)
 
 Conceptually, the grid of the game world can be modeled as a three dimensional array of:
 
