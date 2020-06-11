@@ -25,7 +25,7 @@ Alternative and arguably more memory efficient ways involve using a `HashMap` bu
 
 ## Build Area
 
-The build area is a limited view of the map the player can roam freely. Once the player reaches the edge of the build area, a rebuild is required which is to update the player's view. The build area consists of 104 x 104 tiles and showcases events that are currently happening in the game in that particular part of the map. As the build area consists of 104 x 104 tiles and each zone being 8 x 8 tiles, our build area consists of 13 x 13 zones. When a rebuild occurs, the build area recenters itself around the player's current position. The center of the build area is calculated by dividing the view in two which equals 6 zones (48 tiles). This means that the player's position local to the build area, right after a rebuild will always be in zone 7, 7 (48, 48).
+The build area is a limited view of the map the player can roam freely. Once the player reaches the edge of the build area, a rebuild is required which is to update the player's view. The build area consists of 104 x 104 tiles and showcases events that are currently happening in the game in that particular part of the map. As the build area consists of 104 x 104 tiles and each zone being 8 x 8 tiles, our build area consists of 13 x 13 zones. When a rebuild occurs, the build area recenters itself around the player's current position. The center of the build area is calculated by dividing the view in two which equals 6 zones (48 tiles, exclusively). This means that the player's position local to the build area, right after a rebuild will always be in zone 7, 7 (48, 48).
 
 TODO: diagram
 
@@ -43,7 +43,7 @@ private boolean rebuildRequired(Position position) {
 }
 ```
 
-The methods `getX()` and getZ()` get the player's current x and z coordinates within the build area, respectively.
+The methods `getX()` and `getZ()` get the player's current x and z coordinates within the build area, respectively.
 
 ```java
 private static final int RADIUS = 6;
