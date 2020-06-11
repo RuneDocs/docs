@@ -1,0 +1,1 @@
+Many components of the protocol have not changed significantly. Specifiations are outlined in this directory.
