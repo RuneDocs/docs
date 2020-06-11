@@ -47,9 +47,17 @@ private boolean rebuildRequired(Position position) {
 
     return reachedLowerEdge || reachedUpperEdge;
 }
+
+public int getX(Position p) {
+    return p.getX() - ((lastRebuild.getZoneX() - RADIUS) * Zone.SIZE);
+}
+
+public int getZ(Position p) {
+    return p.getZ() - ((lastRebuild.getZoneZ() - RADIUS) * Zone.SIZE);
+}
 ```
 
-The methods `getX()` and `getZ()` get the player's current x and z coordinates within the build area, respectively.
+The methods `getX()` and `getZ()` get the player's current x and z coordinates within the build area, respectively. As is noticable by the `lastRebuild` field, the `BuildArea` keeps track of where it last has been updated to compare whether it should rebuild again using a given `Position` as its new center.
 
 ```java
 private static final int RADIUS = 6;
