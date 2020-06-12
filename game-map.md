@@ -204,6 +204,21 @@ public void paste(Position target, Zone zone) {
 }
 ```
 
+A zone can also be rotated in our dynamic construct (for rooms in Player Owned Houses). This means that every flag in the collision matrix has to be shifted by X degrees as well. For example, clockwise rotating a matrix by 90 degrees can be implemented as:
+
+```java
+public void rotate() {
+    int[][] updated = new int[getWidth()][getLength()];
+    for (int x = 0; x < getWidth(); ++x) {
+        for (int z = 0; z < getLength(); ++z) {
+            updated[x][z] = flags[getWidth() - z - 1][x];
+        }
+    }
+
+    flags = updated;
+}
+```
+
 The client then needs to showcase these changes. There are two types of packets that the client supports. These are called static rebuild and dynamic rebuild, respectively. The static rebuild packet is used when there are no dynamic changes (such as zones being copied over) to the map. This will tell the client to draw the regular map based on a given tile position. For most of the time, the static rebuild packet is used. 
 
 ```java
