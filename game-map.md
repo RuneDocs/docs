@@ -224,8 +224,8 @@ The client then needs to showcase these changes. There are two types of packets 
 ```java
 public static EventEncoder<BuildAreaStaticRebuild> encoder() {
     return (out, evt) -> {
-        out.writeShort(evt.getCenterX());
-        out.writeShort(evt.getCenterZ());
+        out.writeShort(evt.getCenterZoneX());
+        out.writeShort(evt.getCenterZoneZ());
 
         out.writeShort(evt.getKeySets().size());
         for (MapSquareConfig.KeySet keySet : evt.getKeySets()) {
@@ -244,8 +244,8 @@ The dynamic rebuild packet on the other hand will draw the zones that have been 
         return (out, evt) -> {
             out
                     .writeBoolean(evt.requireImmediateRebuild())
-                    .writeShort(evt.getCenterX())
-                    .writeShort(evt.getCenterZ())
+                    .writeShort(evt.getCenterZoneX())
+                    .writeShort(evt.getCenterZoneZ())
                     .writeShort(evt.getKeySets().size());
 
             bitBlock(BitAccessType.WRITE, out, bitIndex -> {
