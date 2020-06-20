@@ -9,15 +9,15 @@ Floor items have one of three states:
 * Revealed aka public - Can be seen and taken by any players.
 * Disappeared - Removed from view and unable to be picked back up; permanently lost. 
 
-An item dropped always starts hidden, after `reveal time` is shown to all and then after `disappear time` is removed.
+An item dropped always starts hidden, `reveal` and `disappear` count downs run independently of one another.
 Not all items are revealed and not all items disappear.
 
 | Type | Reveal time (ticks) | Disappear time (ticks) |
 |---|---|---|
-| Tradeable item dropped by player | 100 | 200 |
+| Tradeable item dropped by player | 100 | 300 |
 | Untradeable item dropped by player | - | 300 |
-| Arrow shot or loot from npc | 100 | 100 |
-| Item placed on table | 100 | 9900 |
+| Arrow shot or loot from npc | 100 | 200 |
+| Item placed on table | 100 | 1000 |
 | Item dropped in dungeoneering | 0 | - |
 
 Floor items persist on previously visited planes but items on other planes are updated to be added or removed. 
