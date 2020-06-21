@@ -32,3 +32,7 @@ Dropped stacks don't combine with already revealed stacks, including in dungeone
 Combining stacks resets the disappear count down but not the reveal time.
 
 TODO test if rules apply if initial stack is dropped by an npc
+
+## Implementation
+
+[Kotlin](FloorItems.kt)
