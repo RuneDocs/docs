@@ -13,13 +13,13 @@ The priority of a queued action is either weak, normal, strong
 
 Both npcs and players have queues
 
-Runescript queue has the format queue(type, tick rate)(parameters)
+Runescript queue has the format `queue(type, tick delay)(parameters)`
 
-[npc_queue(npc_say,2)](https://github.com/RuneStar/leaks/blob/master/102.txt)
+[npc_queue(npc_say,2)](https://github.com/RuneStar/leaks/blob/master/102.0.jpg)
 
-[combat_clearqueue & player_end_poison](https://github.com/RuneStar/leaks/blob/master/176.txt)
+[combat_clearqueue & player_end_poison](https://github.com/RuneStar/leaks/blob/master/176.0.jpg)
 
-[weakqueue*(smith_generic,3)](https://github.com/RuneStar/leaks/blob/master/205.txt)
+[weakqueue*(smith_generic,3)](https://github.com/RuneStar/leaks/blob/master/205.0.png)
 
 [clearqueue(fade_clear)](https://github.com/RuneStar/leaks/blob/master/242.spawns-runescript.png)
 
@@ -61,11 +61,12 @@ Are they related?
 * Movement
 * Combat
 * Consuming food and potions
-* Teleports
+* Container modifications
 
 ## Strong
 * Hits
 * Death
+* Teleports?
 
 ## None
 
@@ -112,3 +113,13 @@ All actions cancels walking and combat, closes interfaces
 * When is the queue processed?
 * What queue priorities cancel what?
 * When is a queue processed in a tick?
+* Effects
+    * Passive
+        * Godwars snow
+        * Monkey madness tunnel rock-fall
+        * Barrows crypt crumble
+    * Active
+        * Spells (confuse, bind, etc..)
+        * Prayers (drain, boost etc..)
+        * Poison
+  
