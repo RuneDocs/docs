@@ -53,6 +53,7 @@ Are they related?
     * Mining
     * Farming
     * Summoning infuse pouches
+* Sitting home teleport
     
 ## Normal - Waits for interfaces
 
@@ -66,7 +67,7 @@ Are they related?
 ## Strong
 * Hits
 * Death
-* Teleports?
+* Teleports
 
 ## None
 
@@ -88,13 +89,14 @@ All actions cancels walking and combat, closes interfaces
 ### Interfaces that pause movement
 
 * Skill guides
+* Dialogues
 
 > Opening a skill guide will stall an action from performing e.g attacking, picking up an item until the interface is closed
  
 ### Interfaces that don't stop movement
 
 * Quest guides
-* Achivement guides
+* Achievement guides
 * Clan setup
 
 ### Interfaces that stop movement
@@ -104,15 +106,18 @@ All actions cancels walking and combat, closes interfaces
 
 # Questions
 
-* How do actions which a player can't click out of work? (Obstacles, Ectofunctus)
-* How do animations play into this? (Teleporting, Emotes)
-* Are dialogues part of the queue?
+* If all actions clear queues, what about poison?
 * Are interfaces part of the queue?
-* When is a queue processed?
-* If something is added to the queue by a queue action, does it activate on the same tick or the next one?
-* When is the queue processed?
-* What queue priorities cancel what?
-* When is a queue processed in a tick?
+* What queue priorities cancel what? - Cancels all priority queues below it, except poisons?
+
+* How do actions which a player can't click out of work? (Obstacles, Ectofunctus) - Just queue 3 actions with the correct delays, unfreezing the player after
+* How do animations play into this? (Teleporting, Emotes) - Not all emotes suspend hits, most suspend movement?
+* Are dialogues part of the queue? - Yes definitely, level up suspends combat
+* If something is added to the queue by a queue action, does it activate on the same tick or the next one? - Same, delay depending.
+* When is a queue processed, is it each tick or more frequently?
+
+# Notes
+
 * Effects
     * Passive
         * Godwars snow
@@ -122,4 +127,9 @@ All actions cancels walking and combat, closes interfaces
         * Spells (confuse, bind, etc..)
         * Prayers (drain, boost etc..)
         * Poison
-  
+* Granite maul special; click the spec bar twice, switch to a different weapon, hit, switch back to granite maul and it would auto spec
+* Karambwan - doesn't clear queue, separate from regular food
+* Potions and food are separate actions but on the same priority
+* Equipping and 1-tick changing
+* D-Spear (suspends hits)
+* Level teleport interface stall - configure exp drops
