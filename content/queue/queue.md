@@ -47,24 +47,32 @@ Are they related?
     * Herblore
     * Bones on altar
     * Runecrafting
-    * Woodcutting
     * Cooking
     * Fishing
     * Mining
     * Farming
     * Summoning infuse pouches
+* Gathering
+    * Woodcutting
+    * Firemaking
+* Normal emotes
 * Sitting home teleport
+* Movement - (interaction)
+* Filling vials
     
 ## Normal - Waits for interfaces
 
-* Poison
-* XP drops
-* Movement
-* Combat
-* Consuming food and potions
-* Container modifications
+* Level up (gfx, sound, dialogue)
+* Poison - Not cancelled
+* ~~XP drops - Not cancelled~~
+* ~~Consuming food and potions - Not cancelled~~
+* ~~Container modifications - Not cancelled~~
+* Movement - (walk to tile, follow)
+* Combat - Cancellable (attacking)
+* ~~Most dialogues~~
 
-## Strong
+## Strong - Closes interfaces
+Cancels Weak, suspends normal
 * Hits
 * Death
 * Teleports
@@ -73,6 +81,24 @@ Are they related?
 
 * Hitpoint renewal
 
+## Interaction Movement
+Can't be suspended if right next too - means there's a pre-movement check
+Can be suspended if have to move to reach target - Movement isn't suspended like walk to tile
+Only walk to tile can have movement-suspended on the first tick
+
+## Food
+Doesn't stop movement, stops action at end of movement
+
+Pot + food doesn't work in the same tick, only food + pot
+
+Kara + food takes normal delay
+1 tick healing must be Food + Pot + Karambwan
+
+## Bury bones
+Stops movement, but movement is allowed to start after first tick (animations combine and still get xp later)
+
+## Drop item & alching
+Doesn't stop movement, does stop action at the end of movement
 
 All actions cancels walking and combat, closes interfaces
 
@@ -89,7 +115,7 @@ All actions cancels walking and combat, closes interfaces
 ### Interfaces that pause movement
 
 * Skill guides
-* Dialogues
+* ~~Dialogues~~ (Is it dialogues or is it leveling up itself?)
 
 > Opening a skill guide will stall an action from performing e.g attacking, picking up an item until the interface is closed
  
@@ -106,9 +132,10 @@ All actions cancels walking and combat, closes interfaces
 
 # Questions
 
+* Are delays handled before or as part of the queue?
 * If all actions clear queues, what about poison?
+* What queue priorities cancel what? - Cancels all priority queues below it, except poisons? see above
 * Are interfaces part of the queue?
-* What queue priorities cancel what? - Cancels all priority queues below it, except poisons?
 
 * How do actions which a player can't click out of work? (Obstacles, Ectofunctus) - Just queue 3 actions with the correct delays, unfreezing the player after
 * How do animations play into this? (Teleporting, Emotes) - Not all emotes suspend hits, most suspend movement?
@@ -125,11 +152,15 @@ All actions cancels walking and combat, closes interfaces
         * Barrows crypt crumble
     * Active
         * Spells (confuse, bind, etc..)
-        * Prayers (drain, boost etc..)
+        * Prayers (leech, boost etc..)
         * Poison
 * Granite maul special; click the spec bar twice, switch to a different weapon, hit, switch back to granite maul and it would auto spec
-* Karambwan - doesn't clear queue, separate from regular food
+* Karambwan/pizzas/pies/chocolate bomb/tangled toad legs - doesn't clear queue, separate from regular food
 * Potions and food are separate actions but on the same priority
 * Equipping and 1-tick changing
 * D-Spear (suspends hits)
 * Level teleport interface stall - configure exp drops
+
+first two foods are cooked at 3 ticks ea, ones after that cook at 4 ticks
+most hits are determined upon added to damage queue
+combat delay is that of the last weapon attacked with
