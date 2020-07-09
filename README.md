@@ -1,14 +1,21 @@
 ## RuneDocs
 _Documented information about the entire RuneScape game._
 
-#### [Content](https://runedocs.github.io/Documentation/content)
+#### [Content](./content)
+Combat
 
-#### [Functionality](https://runedocs.github.io/Documentation//functionality)
+Poison
 
-#### [Naming](https://runedocs.github.io/Documentation/naming)
+Queue
 
-#### [Protocol](https://runedocs.github.io/Documentation/protocol)
+#### [Functionality](./functionality)
 
-#### [RuneScript](https://runedocs.github.io/Documentation/runescript)
+
+
+#### [Naming](./naming)
+
+#### [Protocol](./protocol)
+
+#### [RuneScript](./runescript)
 
 
