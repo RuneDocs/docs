@@ -8,7 +8,7 @@ _Documented information about the entire RuneScape game._
 
 #### Functionality
 
-1. [Map](./content/map)
+1. [Map](./functionality/map)
 
 #### Naming
 
