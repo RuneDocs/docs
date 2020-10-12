@@ -1,11 +1,11 @@
 module.exports = {
   title: "RuneDocs",
   tagline: "The tagline of RuneDocs",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://runedocs.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "img/favicon.png",
-  organizationName: "runedocs", // Usually your GitHub org/user name.
+  organizationName: "RuneDocs", // Usually your GitHub org/user name.
   projectName: "documentation", // Usually your repo name.
   themeConfig: {
     navbar: {
@@ -49,16 +49,8 @@ module.exports = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              label: "Rune-Server",
+              href: "https://rune-server.ee/",
             },
           ],
         },
@@ -71,7 +63,7 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/RuneDocs/Documentation",
             },
           ],
         },
@@ -86,14 +78,13 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
+          editUrl: "https://github.com/RuneDocs/Documentation/edit/master/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
+            "https://github.com/RuneDocs/Documentation/edit/master/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
