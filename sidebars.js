@@ -9,7 +9,7 @@ module.exports = {
     Naming: ["naming/glossary"],
     Protocol: ["protocol/r667/r667-client", "protocol/r667/r667-server"],
     RuneScript: ["runescript"],
-    Docusaurus: ["doc1", "doc2", "doc3"],
+    Docusaurus: ["doc1"],
     Features: ["mdx"],
   },
 };
