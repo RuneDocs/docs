@@ -14,8 +14,8 @@ _Documented information about the entire RuneScape game._
 
 #### Protocol
 
-1. [Data Types](./content/data-types)
-2. [RS2011](./content/rs2011)
+1. [Data Types](./protocol/data-types)
+2. [RS2011](./protocol/rs2011)
 
 #### RuneScript
 
